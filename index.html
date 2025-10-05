@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>Homepage</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#17cf17",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                    },
+                    fontFamily: {
+                        display: ["Work Sans"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display text-black dark:text-white overflow-x-hidden">
+        
+        <header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+            <div
+                class="container mx-auto flex items-center justify-between whitespace-nowrap border-b border-primary/20 px-4 sm:px-6 lg:px-8 py-3">
+                <div class="flex items-center gap-2">
+                    <svg class="text-primary size-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                    </svg>
+                    <h2 class="text-xl font-bold tracking-tight">HindTrek</h2>
+                </div>
+                
+                <nav class="hidden lg:flex flex-1 justify-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary/20 dark:bg-primary/30 hover:bg-primary/30 dark:hover:bg-primary/40 text-sm font-bold tracking-wide transition-colors">
+                        <span class="truncate"><a href="login.html">Login</a></span>
+                    </button>
+                    
+                    <button class="lg:hidden text-black dark:text-white" id="mobile-menu-button">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <line x1="3" x2="21" y1="12" y2="12"></line>
+                            <line x1="3" x2="21" y1="6" y2="6"></line>
+                            <line x1="3" x2="21" y1="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-[65px] left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-10">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a class="text-sm font-medium hover:text-primary transition-colors py-2 border-b border-primary/10" href="index.html">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors py-2 border-b border-primary/10" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors py-2 border-b border-primary/10" href="specialtrek.html">Special Treks</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors py-2 border-b border-primary/10" href="photogallery.html">Photo Gallery</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors py-2 border-b border-primary/10" href="trekclub.html">Trek Club</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors py-2" href="articles.html">Articles</a>
+            </nav>
+        </div>
+        <main class="flex-grow">
+            <section class="relative flex items-center justify-center min-h-[60vh] bg-cover bg-center bg-no-repeat"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkXJmnCuEHkZ3ibGKDR-4QFoK9_BfaS_6Rk07vzEK5z-BpydBqMgn3bJ0xwix6b5eXFjPJmpOUHUk6b4E6vs4icfJpsgjYlSXF5oKJ9Kh_LypSDj5Tq7_a7ETRDE46elVm7VHNHw1M6Ay1gHzjlx2FvVbjpSSYIYm98PMTRRm5Wv-d6w_7sT871zdbwEsrkHxhMNzhJ0Y_lLruzguU1M73idzLWNfw9SembMnlwWpLSYa_CD5FYkSfCvvSgE-y_CkyfHolFYceXTQU");'>
+                <div
+                    class="container mx-auto flex flex-col items-center justify-center gap-6 p-4 text-center text-white">
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tighter">Explore the Himalayas with HindTrek
+                    </h1>
+                    <p class="max-w-3xl text-base md:text-lg">Discover breathtaking trekking experiences in the Indian
+                        Himalayas. From challenging peaks to serene trails, we offer adventures for every level.</p>
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-background-dark text-base font-bold tracking-wide transition-transform hover:scale-105">
+                        <span class="truncate"><a href="upcomingtrek.html">Find Your Trek</a></span>
+                    </button>
+                </div>
+            </section>
+            <section class="py-16 sm:py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-center mb-10">Upcoming Treks</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("16.png");'>
+                            </div>
+                            <div class="p-2">
+                                <h3 class="text-lg font-bold">Annapurna Base Camp Trek</h3>
+                                <p class="text-primary text-sm font-medium">14 Days | Moderate</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("15.png");'>
+                            </div>
+                            <div class="p-2">
+                                <h3 class="text-lg font-bold">Everest Base Camp Trek</h3>
+                                <p class="text-primary text-sm font-medium">16 Days | Challenging</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("13.png");'>
+                            </div>
+                            <div class="p-2">
+                                <h3 class="text-lg font-bold">Langtang Valley Trek</h3>
+                                <p class="text-primary text-sm font-medium">12 Days | Moderate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16 sm:py-20 bg-primary/5 dark:bg-primary/10">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-center mb-10">Special Treks</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("14.png");'>
+                            </div>
+                            <div class="p-2">
+                                <h3 class="text-lg font-bold">Kanchenjunga Base Camp Trek</h3>
+                                <p class="text-primary text-sm font-medium">20 Days | Challenging</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("11.png");'>
+                            </div>
+                            <div class="p-2">
+                                <h3 class="text-lg font-bold">Manaslu Circuit Trek</h3>
+                                <p class="text-primary text-sm font-medium">18 Days | Challenging</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("12.png");'>
+                            </div>
+                            <div class="p-2">
+                                <h3 class="text-lg font-bold">Upper Mustang Trek</h3>
+                                <p class="text-primary text-sm font-medium">15 Days | Moderate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16 sm:py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-center mb-10">Photo Gallery</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="overflow-hidden rounded-lg group">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-300 group-hover:scale-110"
+                                style='background-image: url("p1.jpg");'>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden rounded-lg group">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-300 group-hover:scale-110"
+                                style='background-image: url("p2.jpeg");'>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden rounded-lg group">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-300 group-hover:scale-110"
+                                style='background-image: url("p3.jpeg");'>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden rounded-lg group">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-300 group-hover:scale-110"
+                                style='background-image: url("p4.jpeg");'>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden rounded-lg group">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-300 group-hover:scale-110"
+                                style='background-image: url("p5.jpeg");'>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden rounded-lg group">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-300 group-hover:scale-110"
+                                style='background-image: url("p6.jpeg");'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16 sm:py-20 text-center bg-primary/5 dark:bg-primary/10">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold tracking-tight mb-4">Join the HindTrek Club</h2>
+                    <p class="max-w-3xl mx-auto mb-6 text-black/70 dark:text-white/70">Become a member of the HindTrek
+                        Club and enjoy exclusive benefits, discounts, and early access to new treks. Connect with fellow
+                        trekkers and share your experiences.</p>
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-background-dark text-base font-bold tracking-wide transition-transform hover:scale-105 mx-auto">
+                        <span class="truncate">Join Now</span>
+                    </button>
+                </div>
+            </section>
+            <section class="py-16 sm:py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-center mb-12">From Our Blog</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                        <div class="flex flex-col gap-4">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("images-6.jpeg");'>
+                            </div>
+                            <div>
+                                <p class="text-primary text-sm font-medium">Trekking Tips</p>
+                                <h3 class="text-lg font-bold mt-1 mb-2">Essential Gear for Himalayan Treks</h3>
+                                <p class="text-black/70 dark:text-white/70 text-sm">A comprehensive guide to packing for
+                                    your next Himalayan adventure, ensuring you have the right equipment.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("images-7.jpeg");'>
+                            </div>
+                            <div>
+                                <p class="text-primary text-sm font-medium">Trekking Destinations</p>
+                                <h3 class="text-lg font-bold mt-1 mb-2">Top 5 Treks in the Indian Himalayas</h3>
+                                <p class="text-black/70 dark:text-white/70 text-sm">Explore the most breathtaking
+                                    trekking destinations in the Indian Himalayas, from challenging peaks to serene
+                                    trails.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                style='background-image: url("images-8.jpeg");'>
+                            </div>
+                            <div>
+                                <p class="text-primary text-sm font-medium">Trekking Safety</p>
+                                <h3 class="text-lg font-bold mt-1 mb-2">Staying Safe on Your Himalayan Trek</h3>
+                                <p class="text-black/70 dark:text-white/70 text-sm">Learn essential safety tips for
+                                    trekking in the Himalayas, including altitude sickness prevention and emergency
+                                    procedures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        </div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('-translate-y-full'); 
+                mobileMenu.classList.toggle('translate-y-0');   
+            });
+        }
+    </script>
+
+</body>
+</html>

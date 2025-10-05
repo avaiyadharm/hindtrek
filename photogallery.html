@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HindTrek Photo Gallery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf17",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a class="flex items-center gap-3" href="#">
+                        <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                        </svg>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">HindTrek</h1>
+                    </a>
+                    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">About Us</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">FAQs</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            href="#">Contact Us</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a class="hidden sm:inline-flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg hover:bg-primary/90 transition-all duration-300"
+                            href="login.html">
+                            Login
+                        </a>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-40">
+            <nav class="flex flex-col p-4 space-y-1">
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="index.html">Home</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="specialtrek.html">Special Treks</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="photogallery.html">Photo Gallery</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="trekclub.html">Trek Club</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="articles.html">Articles</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="#">About Us</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-gray-200 dark:border-gray-700/50" href="#">FAQs</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2" href="#">Contact Us</a>
+            </nav>
+        </div>
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Photo Gallery
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">Explore breathtaking moments from our treks
+                        across India.</p>
+                </div>
+                <div class="mb-12">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400 dark:text-gray-500" fill="currentColor" height="24px"
+                                viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <input
+                            class="w-full h-14 pl-12 pr-4 rounded-xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent transition text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                            placeholder="Search for treks, locations, or categories" type="search" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="p1.jpg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="p2.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="p4.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="p5.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="p6.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-10.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-11.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-12.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-3.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-4.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-5.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Trekking photo"
+                            class="w-full h-full object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-300"
+                            src="images-6.jpeg" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('-translate-y-full'); 
+                    mobileMenu.classList.toggle('translate-y-0');   
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

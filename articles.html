@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HindTrek Articles</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf17",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "text-light": "#112111",
+                        "text-dark": "#f6f8f6",
+                        "text-muted-light": "#4a5568",
+                        "text-muted-dark": "#a0aec0",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header
+            class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex h-20 items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"></path>
+                        </svg>
+                        <h1 class="text-2xl font-bold tracking-tight">HindTrek</h1>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="hidden md:flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary/30 dark:bg-primary/30 dark:hover:bg-primary/40 text-primary px-6 py-2.5 text-sm font-bold transition-colors">
+                            <a href="login.html">Login</a>
+                        </button>
+                        <button class="lg:hidden p-2" id="mobile-menu-button">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-40">
+            <nav class="flex flex-col p-4 space-y-1">
+                <a class="block text-base font-medium text-text-light dark:text-text-dark hover:text-primary transition-colors py-2 px-2 border-b border-border-light dark:border-border-dark" href="index.html">Home</a>
+                <a class="block text-base font-medium text-text-light dark:text-text-dark hover:text-primary transition-colors py-2 px-2 border-b border-border-light dark:border-border-dark" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="block text-base font-medium text-text-light dark:text-text-dark hover:text-primary transition-colors py-2 px-2 border-b border-border-light dark:border-border-dark" href="specialtrek.html">Special Treks</a>
+                <a class="block text-base font-medium text-text-light dark:text-text-dark hover:text-primary transition-colors py-2 px-2 border-b border-border-light dark:border-border-dark" href="photogallery.html">Photo Gallery</a>
+                <a class="block text-base font-medium text-text-light dark:text-text-dark hover:text-primary transition-colors py-2 px-2 border-b border-border-light dark:border-border-dark" href="trekclub.html">Trek Club</a>
+                <a class="block text-base font-medium text-text-light dark:text-text-dark hover:text-primary transition-colors py-2 px-2" href="articles.html">Articles</a>
+            </nav>
+        </div>
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">Trekking Adventures</h2>
+                    <p class="mt-4 text-lg text-text-muted-light dark:text-text-muted-dark">Explore our collection of
+                        articles, tips, and trekking experiences.</p>
+                </div>
+                <div class="mb-12">
+                    <label class="relative" for="search">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                            <span
+                                class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">search</span>
+                        </div>
+                        <input
+                            class="w-full rounded-full border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark py-3 pl-12 pr-4 text-base focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            id="search" placeholder="Search for articles..." type="search" />
+                    </label>
+                </div>
+                <div class="grid gap-12">
+                    <article class="group @container">
+                        <div class="flex flex-col @lg:flex-row gap-8 items-center">
+                            <div class="w-full @lg:w-2/5">
+                                <div class="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
+                                    <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBb9v9r9u_lNwLreXkbcZ0ESfnKP-cNsL0lX_2PhYM9NPtTmc7Gah_mg6WpyRiA6ysTIAbR6ZerxhbhssckAEKEeoubvBkuYvzAQphHL0EtNYtnD5GQnfCu8zYOFFb1StWHSfR5G6ZhpQU_VhBCeY97hZnDU0yLuyY4-vPxjPtqd7hmnXYk4UPmO3d7aqz75ILBPYkSSh0DvJXWe60kWsr3I29mzanyQEBXdBM4iLlojqj8LNU-EOhpc9LwZi-qTfywFAcT1FyR2h4R");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full @lg:w-3/5">
+                                <h3 class="text-2xl font-bold leading-tight tracking-tight mb-2">
+                                    <a class="hover:text-primary transition-colors" href="#">Exploring the Himalayas: A
+                                        Trekker's Diary</a>
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">Follow adventurer Anya
+                                    Sharma as she recounts her journey through the majestic Himalayan ranges, sharing
+                                    insights, challenges, and breathtaking moments.</p>
+                                <a class="font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="group @container">
+                        <div class="flex flex-col @lg:flex-row gap-8 items-center">
+                            <div class="w-full @lg:w-2/5">
+                                <div class="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
+                                    <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQea2IST0n_0Cs3q0rROWiZgmHKQmq33mohPJQ_mC8ZE_mBulwh15q6Xj9LTYKdIMFEVD6xvSp8JWfUK7Yn6jvx9FzNZZmNpbQjFNzEwAkkRV987JAxfDFXUpSQkMdU7xNqB1L53igg0wi1KkF0OwyR9zF7Q6ySHcOc2oBm4c9H_HjBh9xuOzGrm-7Wg3HRap2LzgQBO9_7liWYGQ9fsYL23XRjrcfrVTd_VwHmOyV3ybVaFQ-s37XWED7Rd-KrGmFsocxH-hlFMdD");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full @lg:w-3/5">
+                                <h3 class="text-2xl font-bold leading-tight tracking-tight mb-2">
+                                    <a class="hover:text-primary transition-colors" href="#">Essential Gear for Your
+                                        Next Trek</a>
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">Gear up for your next
+                                    adventure with our comprehensive guide to trekking essentials, from backpacks to
+                                    boots, ensuring a safe and comfortable journey.</p>
+                                <a class="font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="group @container">
+                        <div class="flex flex-col @lg:flex-row gap-8 items-center">
+                            <div class="w-full @lg:w-2/5">
+                                <div class="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
+                                    <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATY98pcbWaLuQLm1TTlDOLYYw1uC9jxODILJpr90HX2EDIYrCgF_IOIMmHX5X0eeCJF5AwG9133DkXqu5QCuyp1BHwGJDMltBGElgzzU7LqJFYjfCLuJW2vOv0y8zRVovXtZIfhn5Ri-Fv-36zGI0ljMhtQKd2YOOfhyFGCLeRu0yIgxSoxKNoUa-yXM6n_HQgGPDfv9_JtM1J7CdFIljGZA0e4P0LUL5uhcpB6mHefTgOz0sxn8qtkxmXn3U7ldAzYOgxCxTDjAPP");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full @lg:w-3/5">
+                                <h3 class="text-2xl font-bold leading-tight tracking-tight mb-2">
+                                    <a class="hover:text-primary transition-colors" href="#">Top 5 Offbeat Treks in
+                                        South India</a>
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">Discover hidden gems in
+                                    South India with our curated list of offbeat treks, offering unique landscapes and
+                                    unforgettable experiences.</p>
+                                <a class="font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="group @container">
+                        <div class="flex flex-col @lg:flex-row gap-8 items-center">
+                            <div class="w-full @lg:w-2/5">
+                                <div class="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
+                                    <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJnylsyLS1X6g1sdWgYKmEnAJ8GNPEr1t3NTGN7dPGbAMzyP3ZJUfkUhJnMqy7s0rmo1B0njQZ-KH22jboMBSdj5MBmUVkI0bnYxiB0hdJe1g3ZBhsd9ODjw13wzfnlSp_7EVoD1_1ZhIJ8GeNu10L3sF7TfCNLZgBozh2zQXVhFm3iA8V_fQetSj5uh4wSHdrZoAYLCNccYiFx5571dIpcvXzRtDZ6Es_bYN_7fKMh_EtJqV3PTOVhxQot1UL47YoT-JG47W8G5DE");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full @lg:w-3/5">
+                                <h3 class="text-2xl font-bold leading-tight tracking-tight mb-2">
+                                    <a class="hover:text-primary transition-colors" href="#">Trekking Safety: Tips and
+                                        Precautions</a>
+                                </h3>
+                                <p class="text-text-muted-light dark:text-text-muted-dark mb-4">Prioritize safety on
+                                    your treks with our essential tips and precautions, covering everything from first
+                                    aid to navigation.</p>
+                                <a class="font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <nav class="flex items-center justify-center mt-16 space-x-2">
+                    <a class="flex items-center justify-center h-10 w-10 rounded-full hover:bg-primary/20 dark:hover:bg-primary/30 text-text-muted-light dark:text-text-muted-dark transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl">chevron_left</span>
+                    </a>
+                    <a class="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white font-bold text-sm"
+                        href="#">1</a>
+                    <a class="flex items-center justify-center h-10 w-10 rounded-full hover:bg-primary/20 dark:hover:bg-primary/30 text-text-light dark:text-text-dark font-bold text-sm transition-colors"
+                        href="#">2</a>
+                    <a class="flex items-center justify-center h-10 w-10 rounded-full hover:bg-primary/20 dark:hover:bg-primary/30 text-text-light dark:text-text-dark font-bold text-sm transition-colors"
+                        href="#">3</a>
+                    <a class="flex items-center justify-center h-10 w-10 rounded-full hover:bg-primary/20 dark:hover:bg-primary/30 text-text-light dark:text-text-dark font-bold text-sm transition-colors"
+                        href="#">4</a>
+                    <a class="flex items-center justify-center h-10 w-10 rounded-full hover:bg-primary/20 dark:hover:bg-primary/30 text-text-muted-light dark:text-text-muted-dark transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl">chevron_right</span>
+                    </a>
+                </nav>
+            </div>
+        </main>
+        <footer
+            class="bg-background-light dark:bg-background-dark border-t border-border-light dark:border-border-dark mt-16">
+            <div
+                class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-text-muted-light dark:text-text-muted-dark">
+                <p>© 2024 HindTrek. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('-translate-y-full'); 
+                    mobileMenu.classList.toggle('translate-y-0');    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

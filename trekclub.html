@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HindTrek Community</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf17",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="flex flex-col min-h-screen">
+        <header
+            class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-primary/20 dark:border-primary/30">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center gap-4">
+                        <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                        </svg>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">HindTrek</h1>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                        
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="hidden lg:flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                            <a href="login.html">Login</a>
+                        </button>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden p-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-primary">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-10">
+            <nav class="flex flex-col p-4 space-y-1">
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-primary/10 dark:border-primary/20" href="index.html">Home</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-primary/10 dark:border-primary/20" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-primary/10 dark:border-primary/20" href="specialtrek.html">Special Treks</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-primary/10 dark:border-primary/20" href="photogallery.html">Photo Gallery</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2 border-b border-primary/10 dark:border-primary/20" href="trekclub.html">Trek Club</a>
+                <a class="block text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary transition-colors py-2 px-2" href="articles.html">Articles</a>
+            </nav>
+        </div>
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-12 text-center">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">HindTrek Community
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">Stories, testimonials, and discussions from our
+                        trekking family.</p>
+                </div>
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Member Stories</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-background-light dark:bg-background-dark border border-primary/10 dark:border-primary/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-full h-48 bg-cover bg-center"
+                                style='background-image: url("8.png");'>
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Journey to the Peaks
+                                </h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 flex-grow">A personal account of
+                                    a challenging trek.</p>
+                                <a class="mt-4 text-sm font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-background-light dark:bg-background-dark border border-primary/10 dark:border-primary/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-full h-48 bg-cover bg-center"
+                                style='background-image: url("9.png");'>
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Conquering the Himalayas
+                                </h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 flex-grow">An inspiring story of
+                                    overcoming obstacles.</p>
+                                <a class="mt-4 text-sm font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-background-light dark:bg-background-dark border border-primary/10 dark:border-primary/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="w-full h-48 bg-cover bg-center"
+                                style='background-image: url("10.png");'>
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Trek Through the Valleys
+                                </h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 flex-grow">Exploring the hidden
+                                    gems of the region.</p>
+                                <a class="mt-4 text-sm font-bold text-primary hover:underline" href="#">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Testimonials</h2>
+                    <div class="space-y-8">
+                        <div
+                            class="p-6 rounded-xl bg-background-light dark:bg-background-dark border border-primary/10 dark:border-primary/20">
+                            <div class="flex items-start gap-4">
+                                <img alt="Anya Sharma" class="size-12 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkJaDbewIWe-4C-6jmhlteXvu1wU_UFg1_ZfyM9LTT0LuWHO-j4MvlnrD74Wjv_d0TWEf-uDc_XjgVCNP31a-qRjQaJwPgm3gWqfHu34wtBRML93WbE5JzY1UN9fxsdqLxiCNuxWMgtyLJw-OXUESQj-a5zDBmu6LOaMNcQlizl0PDp7x9NJJl7OVO_ZMrUaP-tenfLM0UCg9arWaGGmUCVUg4eTVZP3z0JlnONi3EoqJsOYsVYB7Rchzb8FFrjDPLfo_hXob6rSxB" />
+                                <div class="flex-1">
+                                    <div class="flex items-baseline justify-between">
+                                        <div>
+                                            <p class="font-semibold text-gray-900 dark:text-white">Anya Sharma</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">2 months ago</p>
+                                        </div>
+                                        <div class="flex text-primary">
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 text-gray-700 dark:text-gray-300">"The trek was an incredible
+                                        experience. The guides were knowledgeable, and the scenery was breathtaking."
+                                    </p>
+                                    <div class="flex items-center gap-6 mt-4 text-gray-500 dark:text-gray-400">
+                                        <button
+                                            class="flex items-center gap-2 text-sm hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">thumb_up</span> 12</button>
+                                        <button
+                                            class="flex items-center gap-2 text-sm hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">thumb_down</span> 2</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="p-6 rounded-xl bg-background-light dark:bg-background-dark border border-primary/10 dark:border-primary/20">
+                            <div class="flex items-start gap-4">
+                                <img alt="Rohan Verma" class="size-12 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrZQXohCq0u_-W3zbS07d5nXy8QUidBkHqFu6AqyhdtHO8mGuziTt0m3lav-OFiJoQ9tvoF6nufTcVgXYhHksmfePKHOIlFhJJ4xl6OGp_mnzmy89pDvp3OUuVE_3XZYWYb5fGpXfQpv8OnWFptuSY8ughPBuFDNiZTnxv4PBAj4b5n1eG4PzJ24-aGMEVMeBRi02Roi6YisKMr0VCbNmhyyVS1W6dj2x3m8wMubfP7hK20qBD8-Rnrfi0xbx7bdoaQYGtDQvjpru" />
+                                <div class="flex-1">
+                                    <div class="flex items-baseline justify-between">
+                                        <div>
+                                            <p class="font-semibold text-gray-900 dark:text-white">Rohan Verma</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">3 months ago</p>
+                                        </div>
+                                        <div class="flex text-primary">
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg text-primary/30">star</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 text-gray-700 dark:text-gray-300">"I had a great time, but the trek
+                                        was more challenging than I expected. The views were worth it though."</p>
+                                    <div class="flex items-center gap-6 mt-4 text-gray-500 dark:text-gray-400">
+                                        <button
+                                            class="flex items-center gap-2 text-sm hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">thumb_up</span> 8</button>
+                                        <button
+                                            class="flex items-center gap-2 text-sm hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">thumb_down</span> 1</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="p-6 rounded-xl bg-background-light dark:bg-background-dark border border-primary/10 dark:border-primary/20">
+                            <div class="flex items-start gap-4">
+                                <img alt="Priya Kapoor" class="size-12 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAJbXJOl4fNern33wKRCzce9ZsRJu8gWgdgdbX8wOoBfdhYLT0lXnYRnFFFsfIlESnb-b9kS5K18b7FKqfGQHhLRQb1p_QriW_g3_VtPx3GYEZ6HeDG8yw3qWsKqXAsc6vwfSYkQdhi3W-G-4u0dAR5JNEg5_2GoOc_mRa4rerf3v-wpWzB6j0wwHl24Mmz0wtCWUnZJb3E5xfeJDMvN0NWTD9LNtqYb_L9_9IVVgT3THzkqyqzgyld3XISyFA_YSn-tZqD2ePxrGk" />
+                                <div class="flex-1">
+                                    <div class="flex items-baseline justify-between">
+                                        <div>
+                                            <p class="font-semibold text-gray-900 dark:text-white">Priya Kapoor</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">4 months ago</p>
+                                        </div>
+                                        <div class="flex text-primary">
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                            <span class="material-symbols-outlined text-lg">star</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 text-gray-700 dark:text-gray-300">"Absolutely loved the trek! The
+                                        organization was top-notch, and the memories will last a lifetime."</p>
+                                    <div class="flex items-center gap-6 mt-4 text-gray-500 dark:text-gray-400">
+                                        <button
+                                            class="flex items-center gap-2 text-sm hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">thumb_up</span> 15</button>
+                                        <button
+                                            class="flex items-center gap-2 text-sm hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">thumb_down</span> 3</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Discussion Board</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">Join the conversation! Share your trekking
+                        experiences, ask questions, and connect with fellow adventurers.</p>
+                    <div class="relative mb-8">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary">search</span>
+                        <input
+                            class="w-full h-14 pl-12 pr-4 rounded-xl bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 focus:ring-2 focus:ring-primary focus:border-primary transition-colors placeholder-gray-500 dark:placeholder-gray-400"
+                            placeholder="Search for treks or topics..." type="text" />
+                    </div>
+                    <div
+                        class="text-center py-16 px-6 rounded-xl bg-background-light dark:bg-background-dark border-2 border-dashed border-primary/20 dark:border-primary/30">
+                        <div class="w-full h-48 bg-cover bg-center rounded-lg mb-6 max-w-sm mx-auto"
+                            style='background-image: url("images-6.jpeg")'>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">No discussions yet</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Be the first to start a conversation!</p>
+                        <button
+                            class="flex items-center justify-center gap-2 mx-auto rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                            <span class="material-symbols-outlined">add_comment</span>
+                            Start a Discussion
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('-translate-y-full'); 
+                    mobileMenu.classList.toggle('translate-y-0'); 
+                });
+            }
+        });
+    </script>
+</body>
+</html>

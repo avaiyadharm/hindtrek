@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HindTrek</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf17",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "content-light": "#112111",
+                        "content-dark": "#f6f8f6",
+                        "subtle-light": "#4a544a",
+                        "subtle-dark": "#a0b5a0",
+                        "border-light": "#e3e8e3",
+                        "border-dark": "#2a362a",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+    <div class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex items-center justify-between h-20 border-b border-border-light dark:border-border-dark">
+                    <div class="flex items-center gap-4">
+                        <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"></path>
+                        </svg>
+                        <h1 class="text-2xl font-bold">HindTrek</h1>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">
+                            <a href="login.html">Login</a>
+                        </button>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden p-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-40">
+            <nav class="flex flex-col p-4 space-y-2 border-b border-border-light dark:border-border-dark">
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="index.html">Home</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="specialtrek.html">Special Treks</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="photogallery.html">Photo Gallery</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="trekclub.html">Trek Club</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2" href="articles.html">Articles</a>
+            </nav>
+        </div>
+        <main class="flex-grow">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold">Upcoming Treks</h2>
+                    <p class="mt-4 text-lg text-subtle-light dark:text-subtle-dark max-w-3xl mx-auto">
+                        Explore our curated list of upcoming treks in India. Filter by difficulty, duration, and region
+                        to find your perfect adventure.
+                        <br><br><br>
+                    </p><p> .     .     .     .     .     .     .     .     .     .     .     .    </p>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg sticky top-20 z-40 mb-8 border border-border-light dark:border-border-dark">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+                        <div class="relative md:col-span-2 lg:col-span-2">
+                            <span
+                                class="absolute inset-y-0 left-0 flex items-center pl-3 text-subtle-light dark:text-subtle-dark">
+                                <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <input
+                                class="w-full pl-10 pr-4 py-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                                placeholder="Search for treks..." type="text" />
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-background-light dark:bg-background-dark/50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <img alt="Himalayan Ascent"
+                                class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="1.png" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Himalayas</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Himalayan Ascent</h3>
+                            <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Moderate | 5 Days</p>
+                            <p class="text-sm flex-grow mb-4">A breathtaking journey through pristine valleys and
+                                towering peaks of the majestic Himalayas.</p>
+                            <button
+                                class="mt-auto w-full bg-primary text-white py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">Book
+                                Now</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-background-light dark:bg-background-dark/50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <img alt="Western Ghats Trail"
+                                class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="2.png" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Western Ghats</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Western Ghats Trail</h3>
+                            <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Easy | 3 Days</p>
+                            <p class="text-sm flex-grow mb-4">Discover the lush greenery and vibrant biodiversity of the
+                                serene Western Ghats.</p>
+                            <button
+                                class="mt-auto w-full bg-primary/20 dark:bg-primary/30 text-primary font-bold py-2.5 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transition-all duration-300">Learn
+                                More</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-background-light dark:bg-background-dark/50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <img alt="Desert Expedition"
+                                class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="3.png" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Rajasthan</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Desert Expedition</h3>
+                            <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Challenging | 7 Days</p>
+                            <p class="text-sm flex-grow mb-4">Experience the stark beauty and cultural richness of the
+                                Thar Desert on this epic trek.</p>
+                            <button
+                                class="mt-auto w-full bg-primary text-white py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">Book
+                                Now</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-background-light dark:bg-background-dark/50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <img alt="Coastal Trek"
+                                class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDITCmR7F1zv4H2iNU5N-18xMVBfHfoFgwgOKorBqmqlAotP36W2JFohtWrfqcmX9x1eF7bUkHLGZxEZZUOi-C7uvaicbRIxFE3KqtInIYNpEZRdd-0u-PpraH8OwgypMrPcT4somKhzHBYRc2tS2HQ0GaleGPTj4PwDS30h-UqPV2EBfe4N_pTZVyUcT_rLW_xeCsyliJlLvloLtBz1uLNuKyk-Plsc4xk2VmtLT2ISX4RKNfFCcntpD9pH2YOAt1zqULybUVclShl" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Goa</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Coastal Trek</h3>
+                            <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Easy | 4 Days</p>
+                            <p class="text-sm flex-grow mb-4">Walk along stunning cliffs and pristine beaches on this
+                                refreshing coastal adventure.</p>
+                            <button
+                                class="mt-auto w-full bg-primary/20 dark:bg-primary/30 text-primary font-bold py-2.5 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transition-all duration-300">Learn
+                                More</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-background-light dark:bg-background-dark/50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <img alt="Jungle Safari"
+                                class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="11.png" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Kerala</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Kerala Safari</h3>
+                            <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Moderate | 6 Days</p>
+                            <p class="text-sm flex-grow mb-4">Immerse yourself in the dense tropical forests of Kerala,
+                                home to exotic wildlife.</p>
+                            <button
+                                class="mt-auto w-full bg-primary text-white py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">Book
+                                Now</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-background-light dark:bg-background-dark/50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <img alt="Mountain Challenge"
+                                class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="4.png" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/80 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Uttarakhand</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Mountain Challenge</h3>
+                            <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Challenging | 8 Days</p>
+                            <p class="text-sm flex-grow mb-4">Push your limits on this demanding trek to some of
+                                Uttarakhand's highest passes.</p>
+                            <button
+                                class="mt-auto w-full bg-primary/20 dark:bg-primary/30 text-primary font-bold py-2.5 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transition-all duration-300">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center mt-12 space-x-2">
+                    <a class="p-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtle-light dark:text-subtle-dark transition-colors"
+                        href="#">
+                        <svg fill="currentColor" height="18" viewBox="0 0 256 256" width="18"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-sm"
+                        href="#">1</a>
+                    <a class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtle-light dark:text-subtle-dark font-medium text-sm transition-colors"
+                        href="#">2</a>
+                    <a class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtle-light dark:text-subtle-dark font-medium text-sm transition-colors"
+                        href="#">3</a>
+                    <a class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtle-light dark:text-subtle-dark font-medium text-sm transition-colors"
+                        href="#">4</a>
+                    <a class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtle-light dark:text-subtle-dark font-medium text-sm transition-colors"
+                        href="#">5</a>
+                    <a class="p-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtle-light dark:text-subtle-dark transition-colors"
+                        href="#">
+                        <svg fill="currentColor" height="18" viewBox="0 0 256 256" width="18"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer
+            class="bg-background-light dark:bg-background-dark/50 border-t border-border-light dark:border-border-dark">
+            <div
+                class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-subtle-light dark:text-subtle-dark">
+                © 2024 HindTrek. All rights reserved. Embark on your next adventure with us.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('-translate-y-full'); 
+                    mobileMenu.classList.toggle('translate-y-0');    
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

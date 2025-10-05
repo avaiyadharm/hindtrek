@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>HindTrek - Featured Treks</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#17cf17',
+                        'background-light': '#f6f8f6',
+                        'background-dark': '#112111',
+                    },
+                    fontFamily: {
+                        display: ['Work Sans'],
+                    },
+                    borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-200">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header
+            class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-primary/20 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/80 sm:px-6 lg:px-10">
+            <div class="flex items-center gap-3">
+                <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                </svg>
+                <h2 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">HindTrek</h2>
+            </div>
+            
+            <nav class="hidden items-center gap-6 lg:flex">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex items-center justify-center gap-2 rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-zinc-900 transition-colors hover:bg-primary/30 dark:bg-primary/30 dark:text-white dark:hover:bg-primary/40">
+                    <span class="material-symbols-outlined"> person </span>
+                    <span class="truncate"><a href="login.html">Login</a></span>
+                </button>
+                <button class="lg:hidden" id="mobile-menu-button">
+                    <span class="material-symbols-outlined text-3xl text-zinc-900 dark:text-white"> menu </span>
+                </button>
+            </div>
+        </header>
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-[64px] left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-10">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="index.html">Home</a>
+                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="specialtrek.html">Special Treks</a>
+                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="photogallery.html">Photo Gallery</a>
+                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="trekclub.html">Trek Club</a>
+                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2" href="articles.html">Articles</a>
+            </nav>
+        </div>
+        <main class="flex flex-1 justify-center py-8 sm:py-12 lg:py-16">
+            <div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-8 flex flex-col items-center gap-4 md:flex-row md:justify-between">
+                    <h1 class="text-3xl font-bold tracking-tighter text-zinc-900 dark:text-white sm:text-4xl">Special
+                        & Featured Treks</h1>
+                    <div class="relative w-full max-w-sm">
+                        <span
+                            class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-primary/80">
+                            search </span>
+                        <input
+                            class="w-full rounded-lg border border-primary/20 bg-background-light py-2 pl-10 pr-4 text-zinc-900 placeholder-zinc-500 ring-offset-background-light focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:border-primary/30 dark:bg-background-dark dark:text-zinc-100 dark:placeholder-zinc-400 dark:ring-offset-background-dark"
+                            placeholder="Search for treks..." />
+                    </div>
+                </div>
+                <div class="space-y-12">
+                    <section>
+                        <h2
+                            class="mb-6 border-b-2 border-primary/30 pb-2 text-2xl font-bold tracking-tight text-zinc-900 dark:border-primary/40 dark:text-white">
+                            Featured Treks</h2>
+                        <div class="grid gap-8">
+                            <div
+                                class="group grid transform-gpu overflow-hidden rounded-xl border border-primary/20 bg-background-light shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:border-primary/30 dark:bg-background-dark @container md:grid-cols-2">
+                                <div class="h-64 bg-cover bg-center md:h-auto"
+                                    style='background-image: url("7.png");'>
+                                </div>
+                                <div class="flex flex-col p-6">
+                                    <h3 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Himalayan
+                                        Highs</h3>
+                                    <p class="mt-2 flex-grow text-zinc-600 dark:text-zinc-400">Explore the majestic
+                                        peaks of the Himalayas, with breathtaking views and challenging trails.</p>
+                                    <button
+                                        class="mt-4 self-start rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white transition-transform hover:scale-105">View
+                                        Trek</button>
+                                </div>
+                            </div>
+                            <div
+                                class="group grid transform-gpu overflow-hidden rounded-xl border border-primary/20 bg-background-light shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:border-primary/30 dark:bg-background-dark @container md:grid-cols-2">
+                                <div class="h-64 bg-cover bg-center md:h-auto"
+                                    style='background-image: url("8.png");'>
+                                </div>
+                                <div class="flex flex-col p-6">
+                                    <h3 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Western
+                                        Ghats Wonders</h3>
+                                    <p class="mt-2 flex-grow text-zinc-600 dark:text-zinc-400">Discover the lush
+                                        greenery and diverse wildlife of the Western Ghats, a UNESCO World Heritage
+                                        Site.</p>
+                                    <button
+                                        class="mt-4 self-start rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white transition-transform hover:scale-105">View
+                                        Trek</button>
+                                </div>
+                            </div>
+                            <div
+                                class="group grid transform-gpu overflow-hidden rounded-xl border border-primary/20 bg-background-light shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:border-primary/30 dark:bg-background-dark @container md:grid-cols-2">
+                                <div class="h-64 bg-cover bg-center md:h-auto"
+                                    style='background-image: url("9.png");'>
+                                </div>
+                                <div class="flex flex-col p-6">
+                                    <h3 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Southern
+                                        Sojourns</h3>
+                                    <p class="mt-2 flex-grow text-zinc-600 dark:text-zinc-400">Experience the serene
+                                        beauty of South India's trekking trails, from coastal paths to hill station
+                                        hikes.</p>
+                                    <button
+                                        class="mt-4 self-start rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white transition-transform hover:scale-105">View
+                                        Trek</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2
+                            class="mb-6 border-b-2 border-primary/30 pb-2 text-2xl font-bold tracking-tight text-zinc-900 dark:border-primary/40 dark:text-white">
+                            Unique Treks</h2>
+                        <div class="grid gap-8 md:grid-cols-1">
+                            <div
+                                class="group flex flex-col overflow-hidden rounded-xl border border-primary/20 bg-background-light shadow-sm transition-all duration-300 hover:shadow-lg dark:border-primary/30 dark:bg-background-dark md:flex-row">
+                                <div class="order-2 flex flex-1 flex-col justify-center p-6 md:order-1">
+                                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Desert Trails</h3>
+                                    <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Trek through the golden
+                                        sands of the Thar Desert, experiencing the unique culture and landscapes.</p>
+                                    <button
+                                        class="mt-4 self-start rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-zinc-900 transition-colors hover:bg-primary/30 dark:bg-primary/30 dark:text-white dark:hover:bg-primary/40">
+                                        View Trek
+                                    </button>
+                                </div>
+                                <div class="order-1 h-56 w-full flex-shrink-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105 md:order-2 md:h-auto md:w-1/3"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNB12Fq7acYpKwrdLm8QkMNYlrqBGGs88Y7sWVChtUCbmie9mMu5iXPEGRGPGpiREICAf1h-BXzVooOS8I6FptDgJjz3Da9s23xgvkj60OMrNX2SUyMmWnCLxGgauuPIUutvuygkKWdU0hlLgg3q0oybGGsyMOiewSVafwNoZHk7nA0Fn7ObyIw-jHTGsvZELfQoB8B4ckh8AxdMHmJNn8YQAETO9IXJABh6Jw6HFDMCoAvblWnXCBNg6MttWGM97_F7LsOYen5ZoC");'>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col overflow-hidden rounded-xl border border-primary/20 bg-background-light shadow-sm transition-all duration-300 hover:shadow-lg dark:border-primary/30 dark:bg-background-dark md:flex-row">
+                                <div class="order-2 flex flex-1 flex-col justify-center p-6 md:order-1">
+                                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Coastal Walks</h3>
+                                    <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Explore the scenic
+                                        coastlines of India, with stunning views of the ocean and beaches.</p>
+                                    <button
+                                        class="mt-4 self-start rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-zinc-900 transition-colors hover:bg-primary/30 dark:bg-primary/30 dark:text-white dark:hover:bg-primary/40">
+                                        View Trek
+                                    </button>
+                                </div>
+                                <div class="order-1 h-56 w-full flex-shrink-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105 md:order-2 md:h-auto md:w-1/3"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4OmKuYISNAsPPjtVxgmHeO0-HBxc4e5ZEplVQ6HZcwjEicoNNYjSbGXceOjLIHH3EH4LwMyMlY_9P_ejLCt1MCq8ziEpbwWHmOWvoWmWNCZYJTTwiCO6sbtR4I_4ZEBNg4CWYk8PKn_08flXTKRG-_5OUOJ4yX64aJ7VWY4LFEZP3nrty-sI8potIkQDwVWP1P0JJSh3l-pQuxawjsO2zXcKRtOX3sJphtv0Iqq3hoXbS-uhtSSCcyEwy6tm3bhNvo8tjbC4QSYnD");'>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col overflow-hidden rounded-xl border border-primary/20 bg-background-light shadow-sm transition-all duration-300 hover:shadow-lg dark:border-primary/30 dark:bg-background-dark md:flex-row">
+                                <div class="order-2 flex flex-1 flex-col justify-center p-6 md:order-1">
+                                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Forest Hikes</h3>
+                                    <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Immerse yourself in the
+                                        dense forests of India, encountering diverse flora and fauna.</p>
+                                    <button
+                                        class="mt-4 self-start rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-zinc-900 transition-colors hover:bg-primary/30 dark:bg-primary/30 dark:text-white dark:hover:bg-primary/40">
+                                        View Trek
+                                    </button>
+                                </div>
+                                <div class="order-1 h-56 w-full flex-shrink-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105 md:order-2 md:h-auto md:w-1/3"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUapMlEerbkB3j0v8CgkHmK78z2DLNrYcmCUyHjzznGDDKwbjglLxL-wpEE_fSt5vSPv-igb-3xX906WZY2Bug-A5k9Dk-C_Pq_nEJRsxtCRoN__t5Ie61OTUbpt7ZyeZT3fYKL0PSB-hsckp_x9UsdLyEpzNtgBjrvstxLOMW22hvO-zTnU_rMWdsxmdgHd0mQPXcMQpQpa2c0xYIjrzzCViyRD_YZghGoQuz8sROPuBHcYXwFOEk1lHj2ISq8rMRKxmLLkqt5zRr");'>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('-translate-y-full'); 
+                    mobileMenu.classList.toggle('translate-y-0');   
+                });
+            }
+        });
+    </script>
+</body>
+</html>
