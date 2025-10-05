@@ -30,46 +30,53 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-200">
-    <div class="relative flex min-h-screen w-full flex-col">
-        <header
-            class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-primary/20 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-primary/30 dark:bg-background-dark/80 sm:px-6 lg:px-10">
-            <div class="flex items-center gap-3">
-                <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
-                </svg>
-                <h2 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">HindTrek</h2>
-            </div>
-            
-            <nav class="hidden items-center gap-6 lg:flex">
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
-            </nav>
-            
-            <div class="flex items-center gap-4">
-                <button
-                    class="flex items-center justify-center gap-2 rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-zinc-900 transition-colors hover:bg-primary/30 dark:bg-primary/30 dark:text-white dark:hover:bg-primary/40">
-                    <span class="material-symbols-outlined"> person </span>
-                    <span class="truncate"><a href="login.html">Login</a></span>
-                </button>
-                <button class="lg:hidden" id="mobile-menu-button">
-                    <span class="material-symbols-outlined text-3xl text-zinc-900 dark:text-white"> menu </span>
-                </button>
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+    <div class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex items-center justify-between h-20 border-b border-border-light dark:border-border-dark">
+                    <div class="flex items-center gap-4">
+                        <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"></path>
+                        </svg>
+                        <h1 class="text-2xl font-bold">HindTrek</h1>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="upcomingtrek.html">Upcoming Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="specialtrek.html">Special Treks</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="photogallery.html">Photo Gallery</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="trekclub.html">Trek Club</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="articles.html">Articles</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">
+                            <a href="login.html">Login</a>
+                        </button>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden p-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </header>
         <div id="mobile-menu"
-            class="lg:hidden absolute top-[64px] left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-10">
-            <nav class="flex flex-col p-4 space-y-2">
-                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="index.html">Home</a>
-                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="upcomingtrek.html">Upcoming Treks</a>
-                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="specialtrek.html">Special Treks</a>
-                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="photogallery.html">Photo Gallery</a>
-                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2 border-b border-primary/10 dark:border-primary/20" href="trekclub.html">Trek Club</a>
-                <a class="block text-base font-medium text-zinc-900 dark:text-zinc-200 hover:text-primary transition-colors py-2" href="articles.html">Articles</a>
+            class="lg:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark shadow-xl transform -translate-y-full transition-transform duration-300 z-40">
+            <nav class="flex flex-col p-4 space-y-2 border-b border-border-light dark:border-border-dark">
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="index.html">Home</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="upcomingtrek.html">Upcoming Treks</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="specialtrek.html">Special Treks</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="photogallery.html">Photo Gallery</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2 border-b border-border-light dark:border-border-dark/50" href="trekclub.html">Trek Club</a>
+                <a class="block text-base font-medium text-content-light dark:text-content-dark hover:text-primary transition-colors py-2" href="articles.html">Articles</a>
             </nav>
         </div>
         <main class="flex flex-1 justify-center py-8 sm:py-12 lg:py-16">
